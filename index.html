@@ -6,16 +6,16 @@
     <title>Fun Fact Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(to right, #667eea, #764ba2); /* Gradient background */
-            color: #fff;
+            background-color: #f7f7f7; /* Light background */
+            color: #333;
             margin: 0;
             padding: 0;
         }
@@ -24,27 +24,23 @@
             width: 80%;
             max-width: 600px;
             padding: 40px;
-            background-color: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #333;
         }
 
         img {
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
         }
 
         #fact-container {
@@ -54,10 +50,10 @@
         }
 
         #fact {
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 1.6;
             opacity: 1;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s ease;
         }
 
         #fact.fade-out {
@@ -65,19 +61,19 @@
         }
 
         button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            background-color: #00bcd4; /* A more vibrant color */
+            padding: 12px 24px;
+            font-size: 1em;
+            background-color: #4CAF50; /* A green color */
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         button:hover {
-            background-color: #008ba7;
+            background-color: #388E3C;
         }
 
         button:active {
@@ -128,7 +124,7 @@
 
                 // Fade in the fact
                 factContainer.classList.remove('fade-out');
-            }, 500); // Match the transition duration
+            }, 400); // Match the transition duration
         });
     </script>
 </body>
