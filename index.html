@@ -12,6 +12,7 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f0f0f0;
+            transition: background-color 0.5s ease; /* Add transition to the background */
         }
 
         .container {
@@ -32,35 +33,90 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease; /* Button transition */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #fact-container {
+            position: relative;
+            min-height: 50px;
+        }
+
+        #fact {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        #fact.fade-out {
+            opacity: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        /* Example Keyframe Animation */
+        @keyframes backgroundShift {
+            0% { background-color: #f0f0f0; }
+            50% { background-color: #e0e0e0; }
+            100% { background-color: #f0f0f0; }
+        }
+
+        body {
+            animation: backgroundShift 5s infinite;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Fun Fact</h1>
-        <p id="fact">Click the button to generate a fun fact!</p>
+        <img id="fact-image" src="placeholder.jpg" alt="Earth Image">
+        <div id="fact-container">
+            <p id="fact">Click the button to generate a fun fact!</p>
+        </div>
         <button id="generate">Generate Fact</button>
     </div>
     <script>
         const facts = [
-            "Earth is the only known planet to support life.",
-            "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and 1% other gases.",
-            "Earth is the densest planet in the Solar System.",
-            "The Earth's rotation is gradually slowing down.",
-            "Approximately 71% of the Earth's surface is covered by water.",
-            "Earth has one natural satellite, the Moon.",
-            "The Earth's magnetic field protects it from harmful solar radiation.",
-            "The highest point on Earth is Mount Everest, standing at 8,848.86 meters above sea level.",
-            "The Earth's core is made up of iron and nickel.",
-            "The average distance from the Earth to the Sun is about 149.6 million kilometers."
+            { fact: "Earth is the only known planet to support life.", image: "earth1.jpg" },
+            { fact: "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and 1% other gases.", image: "earth2.jpg" },
+            { fact: "Earth is the densest planet in the Solar System.", image: "earth3.jpg" },
+            { fact: "The Earth's rotation is gradually slowing down.", image: "earth4.jpg" },
+            { fact: "Approximately 71% of the Earth's surface is covered by water.", image: "earth5.jpg" },
+            { fact: "Earth has one natural satellite, the Moon.", image: "earth6.jpg" },
+            { fact: "The Earth's magnetic field protects it from harmful solar radiation.", image: "earth7.jpg" },
+            { fact: "The highest point on Earth is Mount Everest, standing at 8,848.86 meters above sea level.", image: "earth8.jpg" },
+            { fact: "The Earth's core is made up of iron and nickel.", image: "earth9.jpg" },
+            { fact: "The average distance from the Earth to the Sun is about 149.6 million kilometers.", image: "earth10.jpg" }
         ];
 
         const factDisplay = document.getElementById('fact');
         const generateButton = document.getElementById('generate');
+        const factImage = document.getElementById('fact-image');
+        const factContainer = document.getElementById('fact-container');
 
         generateButton.addEventListener('click', () => {
             const randomIndex = Math.floor(Math.random() * facts.length);
-            factDisplay.textContent = facts[randomIndex];
+            const selectedFact = facts[randomIndex];
+
+            // Fade out the fact
+            factContainer.classList.add('fade-out');
+
+            // After the fade out, change the fact and image
+            setTimeout(() => {
+                factDisplay.textContent = selectedFact.fact;
+                factImage.src = selectedFact.image;
+                factImage.alt = "Earth Image"; // Set the alt attribute
+
+                // Fade in the fact
+                factContainer.classList.remove('fade-out');
+            }, 500); // Match the transition duration
         });
     </script>
 </body>
