@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact</h1>
+        <p id="fact">Click the button to generate a fun fact!</p>
+        <button id="generate">Generate Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Earth is the only known planet to support life.",
+            "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and 1% other gases.",
+            "Earth is the densest planet in the Solar System.",
+            "The Earth's rotation is gradually slowing down.",
+            "Approximately 71% of the Earth's surface is covered by water.",
+            "Earth has one natural satellite, the Moon.",
+            "The Earth's magnetic field protects it from harmful solar radiation.",
+            "The highest point on Earth is Mount Everest, standing at 8,848.86 meters above sea level.",
+            "The Earth's core is made up of iron and nickel.",
+            "The average distance from the Earth to the Sun is about 149.6 million kilometers."
+        ];
+
+        const factDisplay = document.getElementById('fact');
+        const generateButton = document.getElementById('generate');
+
+        generateButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
