@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Fact Generator</title>
+    <title>Fun Fact Generator 🌍</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
@@ -110,25 +110,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Fun Fact</h1>
-        <img id="fact-image" src="placeholder.jpg" alt="Earth Image">
+        <h1>Fun Fact 🌍</h1>
+        <img id="fact-image" src="placeholder.jpg" alt="Earth Image 🌍">
         <div id="fact-container">
-            <p id="fact">Click the button to generate a fun fact!</p>
+            <p id="fact">Click the button to generate a fun fact! ✨</p>
         </div>
-        <button id="generate">Generate Fact</button>
+        <button id="generate">Generate Fact! 💡</button>
     </div>
     <script>
         const facts = [
-            { fact: "Earth is the only known planet to support life.", image: "earth1.jpg" },
-            { fact: "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and 1% other gases.", image: "earth2.jpg" },
-            { fact: "Earth is the densest planet in the Solar System.", image: "earth3.jpg" },
-            { fact: "The Earth's rotation is gradually slowing down.", image: "earth4.jpg" },
-            { fact: "Approximately 71% of the Earth's surface is covered by water.", image: "earth5.jpg" },
-            { fact: "Earth has one natural satellite, the Moon.", image: "earth6.jpg" },
-            { fact: "The Earth's magnetic field protects it from harmful solar radiation.", image: "earth7.jpg" },
-            { fact: "The highest point on Earth is Mount Everest, standing at 8,848.86 meters above sea level.", image: "earth8.jpg" },
-            { fact: "The Earth's core is made up of iron and nickel.", image: "earth9.jpg" },
-            { fact: "The average distance from the Earth to the Sun is about 149.6 million kilometers.", image: "earth10.jpg" }
+            { fact: "Earth is the only known planet to support life! 🌱", image: "earth1.jpg" },
+            { fact: "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and 1% other gases! 💨", image: "earth2.jpg" },
+            { fact: "Earth is the densest planet in the Solar System! 🏋️‍♀️", image: "earth3.jpg" },
+            { fact: "The Earth's rotation is gradually slowing down! ⏳", image: "earth4.jpg" },
+            { fact: "Approximately 71% of the Earth's surface is covered by water! 🌊", image: "earth5.jpg" },
+            { fact: "Earth has one natural satellite, the Moon! 🌙", image: "earth6.jpg" },
+            { fact: "The Earth's magnetic field protects it from harmful solar radiation! 🛡️", image: "earth7.jpg" },
+            { fact: "The highest point on Earth is Mount Everest, standing at 8,848.86 meters above sea level! 🏔️", image: "earth8.jpg" },
+            { fact: "The Earth's core is made up of iron and nickel! 🔩", image: "earth9.jpg" },
+            { fact: "The average distance from the Earth to the Sun is about 149.6 million kilometers! ☀️", image: "earth10.jpg" }
         ];
 
         const factDisplay = document.getElementById('fact');
@@ -147,7 +147,7 @@
             setTimeout(() => {
                 factDisplay.textContent = selectedFact.fact;
                 factImage.src = selectedFact.image;
-                factImage.alt = "Earth Image"; // Set the alt attribute
+                factImage.alt = "Earth Image 🌍"; // Set the alt attribute
 
                 // Fade in the fact
                 factContainer.classList.remove('fade-out');
