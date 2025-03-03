@@ -6,54 +6,62 @@
     <title>Fun Fact Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Nunito', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f7f7f7; /* Light background */
+            background: #E0FFFF; /* Light Cyan background */
             color: #333;
             margin: 0;
             padding: 0;
+            transition: background 0.3s ease;
         }
 
         .container {
             width: 80%;
-            max-width: 600px;
+            max-width: 700px;
             padding: 40px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             text-align: center;
         }
 
         h1 {
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            color: #333;
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            color: #1E90FF; /* Dodger Blue */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         img {
             max-width: 100%;
             height: auto;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
 
         #fact-container {
             position: relative;
-            min-height: 80px;
-            margin-bottom: 20px;
+            min-height: 90px;
+            margin-bottom: 30px;
         }
 
         #fact {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.25em;
+            line-height: 1.7;
             opacity: 1;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.5s ease;
         }
 
         #fact.fade-out {
@@ -61,23 +69,42 @@
         }
 
         button {
-            padding: 12px 24px;
-            font-size: 1em;
-            background-color: #4CAF50; /* A green color */
+            padding: 16px 32px;
+            font-size: 1.1em;
+            background-color: #20B2AA; /* Light Sea Green */
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
         }
 
         button:hover {
-            background-color: #388E3C;
+            background-color: #008080; /* Teal */
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
         }
 
         button:active {
             transform: scale(0.95);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add a subtle background animation */
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        body {
+            background: linear-gradient(-45deg, #E0FFFF, #ADD8E6, #B0E0E6, #AFEEEE);
+            background-size: 400% 400%;
+            animation: wave 10s ease infinite;
         }
     </style>
 </head>
@@ -124,7 +151,7 @@
 
                 // Fade in the fact
                 factContainer.classList.remove('fade-out');
-            }, 400); // Match the transition duration
+            }, 500); // Match the transition duration
         });
     </script>
 </body>
